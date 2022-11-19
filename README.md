@@ -17,6 +17,9 @@ If you want to download the plugin, click the link to the SpigotMC download page
 ## Requirements
 
 There are no particular requirements needed for this plugin to work.
+## License
+
+This plugin can be freely used by anyone.
 ## Questions/Support
 
 If you have any questions about this plugin, you can join the discord.
