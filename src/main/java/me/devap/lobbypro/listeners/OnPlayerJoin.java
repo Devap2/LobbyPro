@@ -115,10 +115,10 @@ public class OnPlayerJoin implements Listener {
 
             // If player has played before, send ... else ...
             if(p.hasPlayedBefore()){
-                e.setJoinMessage(ChatColor.GRAY + pname + " has joined the server.");
+                e.setJoinMessage(ChatColor.GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.GRAY + "] " + ChatColor.GRAY + pname + " has joined the server.");
             }
             else{
-                e.setJoinMessage(ChatColor.GRAY + pname + " has joined the server for the first time.");
+                e.setJoinMessage(ChatColor.GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.GRAY + "] " + ChatColor.GRAY + pname + " has joined the first time.");
             }
 
         }

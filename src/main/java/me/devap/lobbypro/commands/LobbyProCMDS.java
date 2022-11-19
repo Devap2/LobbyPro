@@ -44,7 +44,7 @@ public class LobbyProCMDS implements CommandExecutor {
 
                         Location location = p.getLocation();
 
-                        p.sendMessage(ChatColor.GREEN + "Set lobby spawn location.");
+                        p.sendMessage(ChatColor.GREEN + "Successfully set the lobby spawn location.");
 
                         // Getting the configuration file and setting the location values.
                         plugin.getConfig().set("lobby-location.World-name", Objects.requireNonNull(location.getWorld()).getName());
@@ -117,6 +117,16 @@ public class LobbyProCMDS implements CommandExecutor {
                         p.openInventory(gui);
 
 
+                    }
+                    else {
+                        if (args[0].equalsIgnoreCase("reload") || args[0].equalsIgnoreCase("rl")) {
+
+                            p.sendMessage(ChatColor.GRAY + "Reloading the plugin configuration file.");
+                            plugin.reloadConfig();
+                            plugin.saveDefaultConfig();
+                            p.sendMessage(ChatColor.GREEN + "Reload complete.");
+
+                        }
                     }
                 }
             }

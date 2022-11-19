@@ -9,7 +9,7 @@ lobby-location:
   Yaw: 1
   Pitch: 1
 
-# Change the default join message
+# To send a join message when a player joins the server.
 join-message: true
 
 # To clean the inventory on server join.
@@ -20,3 +20,18 @@ join-spawn: true
 
 # To disable the player fall damage.
 disable-fall-damage: true
+
+# To disable the player hunger.
+disable-hunger: true
+
+# To disable the weather from changing.
+disable-weather-change: true
+
+# To disable tnt from exploding.
+disable-tnt-explosion: true
+
+# To disable lava damage for players.
+disable-lava-damage: true
+
+# To disable fire damage for players.
+disable-fire-damage: true
