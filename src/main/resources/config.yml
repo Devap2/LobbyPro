@@ -1,0 +1,22 @@
+# --- LobbyPro Configuration File --- #
+
+# Change the default lobby location.
+lobby-location:
+  World-name: World
+  X: 1
+  Y: 4
+  Z: 1
+  Yaw: 1
+  Pitch: 1
+
+# Change the default join message
+join-message: true
+
+# To clean the inventory on server join.
+join-clear-inventory: true
+
+# To teleport the player to the lobby/spawn location.
+join-spawn: true
+
+# To disable the player fall damage.
+disable-fall-damage: true

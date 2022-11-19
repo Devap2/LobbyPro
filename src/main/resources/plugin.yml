@@ -1,0 +1,19 @@
+name: LobbyPro
+version: '${project.version}'
+main: me.devap.lobbypro.LobbyPro
+api-version: 1.18
+authors: [ Devap ]
+description: A Simple Lobby Plugin Which Is Easily Configurable.
+commands:
+  lp:
+    description: Displays a Overview of Information And Commands About the Lobby Pro Plugin.
+    aliases:
+      - lobbypro
+  lobby:
+    description: Teleports You To The Set Lobby Location.
+    aliases:
+      - hub
+  sb:
+    description: Open's the scoreboard.
+    aliases:
+      - scoreboard
