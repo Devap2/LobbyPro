@@ -17,8 +17,9 @@ If you want to download the plugin, click the link to the SpigotMC download page
 ## Requirements
 
 There are no particular requirements needed for this plugin to work.
-## Questions
+## Questions/Support
 
 If you have any questions about this plugin, you can join the discord.
 (Link will be here soon.)
-- Devap
+
+| + Devap + |
