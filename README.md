@@ -1,10 +1,11 @@
 # LobbyPro Plugin
 
-Lobby Pro is a minecraft plugin, which is easily configurable and straightforward to use.
+Lobby Pro is a free minecraft plugin, which is easily configurable and straightforward to use.
 This plugin is based off other Lobby plugins. This is my own version which I decided to make for learning purposes.
+The plugin is configurable and has many options, which you can find in the 'config.yml' file.
 ## Download
 
-If you want to download the plugin, click the link to the SpigotMC download page.
+You can download the plugin from the official SpigotMC download page here:
 (Link will be here soon.)
 ## Installation
 
@@ -22,7 +23,10 @@ There are no particular requirements needed for this plugin to work.
 This plugin can be freely used by anyone.
 ## Questions/Support
 
-If you have any questions about this plugin, you can join the discord.
+If you found any problems or bugs in this plugin, please reach out to me on discord, (Discord here soon.)
+Else if you have any further questions about this plugin, you can join the discord server.
+
+If you want to support us, feel free to leave a review on the SpigotMC website.
 (Link will be here soon.)
 
 
