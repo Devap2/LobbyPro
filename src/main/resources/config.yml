@@ -10,7 +10,10 @@ lobby-location:
   Pitch: 1
 
 # To send a join message when a player joins the server.
-join-message: true
+enable-join-message: true
+
+# To change the message send to the player on server join.
+join-message: "Welcome to the server."
 
 # To clean the inventory on server join.
 join-clear-inventory: true
@@ -35,3 +38,19 @@ disable-lava-damage: true
 
 # To disable fire damage for players.
 disable-fire-damage: true
+
+# To disable players from moving items in inventory.
+disable-item-move: true
+
+# To disable players from swapping items in their inventory. (Except if they're in game-mode creative, or are op.)
+disable-item-swap: true
+
+# To disable players from picking up items.
+disable-item-pick-up: true
+
+# To disable players from placing blocks.
+disable-block-placing: true
+
+# To disable players from breaking blocks.
+disable-block-breaking: true
+

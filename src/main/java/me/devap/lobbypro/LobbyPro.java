@@ -4,17 +4,12 @@ import me.devap.lobbypro.commands.LobbyCMD;
 import me.devap.lobbypro.commands.LobbyProCMDS;
 import me.devap.lobbypro.commands.ScoreBoardCMD;
 import me.devap.lobbypro.listeners.*;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
@@ -26,12 +21,12 @@ public final class LobbyPro extends JavaPlugin {
 
         // Registering the listeners.
         getServer().getPluginManager().registerEvents(new OnPlayerJoin(this), this);
-        getServer().getPluginManager().registerEvents(new OnBlockBreak(), this);
-        getServer().getPluginManager().registerEvents(new OnBlockPlace(), this);
+        getServer().getPluginManager().registerEvents(new OnBlockBreak(this), this);
+        getServer().getPluginManager().registerEvents(new OnBlockPlace(this), this);
         getServer().getPluginManager().registerEvents(new OnFoodLevelChange(this), this);
         getServer().getPluginManager().registerEvents(new OnPlayerInteract(), this);
         getServer().getPluginManager().registerEvents(new OnInventoryClick(), this);
-        getServer().getPluginManager().registerEvents(new OnSwapHandItems(), this);
+        getServer().getPluginManager().registerEvents(new OnSwapHandItems(this), this);
         getServer().getPluginManager().registerEvents(new OnItemDrop(), this);
         getServer().getPluginManager().registerEvents(new OnWeatherChange(this), this);
         getServer().getPluginManager().registerEvents(new OnExplosion(this), this);

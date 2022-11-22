@@ -46,7 +46,7 @@ public class OnPlayerJoin implements Listener {
                 p.teleport(lobbyLocation);
             }
             else {
-               return;
+                return;
             }
 
             // Clearing player's inventory if true in config.
@@ -57,14 +57,12 @@ public class OnPlayerJoin implements Listener {
                 return;
             }
 
-            // Setting the player's join message if true in config.
-            if(plugin.getConfig().getBoolean("join-message")){
-                if(p.hasPlayedBefore()){
-                    p.sendMessage(ChatColor.GREEN + "Welcome back!");
-                }
-                else{
-                    p.sendMessage(ChatColor.GREEN + "Hope you enjoy your stay!");
-                }
+            String joinMessage = plugin.getConfig().getString("join-message");
+            String defaultJoinMessage = (ChatColor.GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.GRAY + "] " + ChatColor.GRAY + pname + " has joined the server.");
+
+            // Setting the player's custom join message if set in config.
+            if(plugin.getConfig().getBoolean("enable-join-message")){
+                e.setJoinMessage(joinMessage);
             }
             else{
                 return;
@@ -110,16 +108,6 @@ public class OnPlayerJoin implements Listener {
             p.getInventory().setItem(0, emerald);
             p.getInventory().setItem(4, lobbyNavigator);
             p.getInventory().setItem(8, infoBook);
-
-            /* Checking if the player has played before, change message when has played before.*/
-
-            // If player has played before, send ... else ...
-            if(p.hasPlayedBefore()){
-                e.setJoinMessage(ChatColor.GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.GRAY + "] " + ChatColor.GRAY + pname + " has joined the server.");
-            }
-            else{
-                e.setJoinMessage(ChatColor.GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.GRAY + "] " + ChatColor.GRAY + pname + " has joined the first time.");
-            }
 
         }
     }

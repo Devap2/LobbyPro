@@ -31,7 +31,7 @@ public class OnInventoryClick implements Listener {
             // if the ItemStack has one of the events above, set cancelled.
             for(ItemStack item : items) {
                 if(item != null && item.hasItemMeta()) {
-                        e.setCancelled(true);
+                    e.setCancelled(true);
                 }
             }
         }
