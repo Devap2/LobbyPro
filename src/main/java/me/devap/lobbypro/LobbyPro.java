@@ -65,7 +65,7 @@ public final class LobbyPro extends JavaPlugin {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
 
         // Creating the list of strings
-        List<String> list = Arrays.asList("help", "setspawn", "setlobby", "gui", "reload", "info", "author");
+        List<String> list = Arrays.asList("help", "setspawn", "setlobby", "updates", "gui", "reload", "info", "version");
         String input = args[0].toLowerCase();
 
         List<String> completions = null;

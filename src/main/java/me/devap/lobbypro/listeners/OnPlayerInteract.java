@@ -54,16 +54,7 @@ public class OnPlayerInteract implements Listener {
                     assert slot != null;
                     if (slot.equals(EquipmentSlot.HAND)) {
 
-                        // Sending the player the server information message.
-                        p.sendMessage("");
-                        p.sendMessage(ChatColor.GRAY + "----------------------------");
-                        p.sendMessage(ChatColor.RED +  "DevCraft Update Information:");
-                        p.sendMessage(ChatColor.GRAY + "----------------------------");
-                        p.sendMessage(ChatColor.GOLD + "Added: " + ChatColor.GRAY + "New Lobby Plugin");
-                        p.sendMessage(ChatColor.GOLD + "Added: " + ChatColor.GRAY + "New Survival Plugin");
-                        p.sendMessage(ChatColor.GOLD + "Added: " + ChatColor.GRAY + "New Features In Hub");
-                        p.sendMessage(ChatColor.GRAY + "----------------------------");
-                        p.sendMessage("");
+                        p.performCommand("lp updates");
 
                     }
                 }
@@ -81,16 +72,7 @@ public class OnPlayerInteract implements Listener {
                     assert slot != null;
                     if (slot.equals(EquipmentSlot.HAND)) {
 
-                        // Sending the player the server information message.
-                        p.sendMessage("");
-                        p.sendMessage(ChatColor.GRAY + "----------------------------");
-                        p.sendMessage(ChatColor.RED +  "DevCraft Server Information:");
-                        p.sendMessage(ChatColor.GRAY + "----------------------------");
-                        p.sendMessage(ChatColor.GOLD + "Owner: " + ChatColor.GRAY + "Devap");
-                        p.sendMessage(ChatColor.GOLD + "Developer: " + ChatColor.GRAY + "Devap");
-                        p.sendMessage(ChatColor.GOLD + "Builder: " + ChatColor.GRAY + "Devap");
-                        p.sendMessage(ChatColor.GRAY + "----------------------------");
-                        p.sendMessage("");
+                        p.performCommand("lp info");
 
                     }
                 }
