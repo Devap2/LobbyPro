@@ -17,3 +17,13 @@ commands:
     description: Open's the scoreboard.
     aliases:
       - scoreboard
+  fly:
+    description: To be able to fly
+  gmc:
+    description: To set the game mode to creative.
+  gms:
+    description: To set the game mode to survival
+  gma:
+    description: To set the gamemode to adventure.
+  gmp:
+    description: To set the gamemode to adventure

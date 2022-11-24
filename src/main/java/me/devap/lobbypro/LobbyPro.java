@@ -1,8 +1,6 @@
 package me.devap.lobbypro;
 
-import me.devap.lobbypro.commands.LobbyCMD;
-import me.devap.lobbypro.commands.LobbyProCMDS;
-import me.devap.lobbypro.commands.ScoreBoardCMD;
+import me.devap.lobbypro.commands.*;
 import me.devap.lobbypro.listeners.*;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -35,8 +33,14 @@ public final class LobbyPro extends JavaPlugin {
         // Registering the commands.
         Objects.requireNonNull(getCommand("lobby")).setExecutor(new LobbyCMD(this));
         Objects.requireNonNull(getCommand("sb")).setExecutor(new ScoreBoardCMD(this));
+        Objects.requireNonNull(getCommand("fly")).setExecutor(new FlyCMD(this));
         Objects.requireNonNull(getCommand("lp")).setExecutor(new LobbyProCMDS(this));
         Objects.requireNonNull(getCommand("lp")).setTabCompleter(this);
+
+        Objects.requireNonNull(getCommand("gmc")).setExecutor(new GameModeCMD());
+        Objects.requireNonNull(getCommand("gms")).setExecutor(new GameModeCMD());
+        Objects.requireNonNull(getCommand("gma")).setExecutor(new GameModeCMD());
+        Objects.requireNonNull(getCommand("gmp")).setExecutor(new GameModeCMD());
 
         // Config
         // Load the configuration.

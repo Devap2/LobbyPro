@@ -59,7 +59,7 @@ public class OnPlayerJoin implements Listener {
 
             // Setting the player's custom join message if set in config.
             if(plugin.getConfig().getBoolean("enable-join-message")){
-                e.setJoinMessage(joinMessage);
+                e.setJoinMessage(ChatColor.GRAY + joinMessage);
             }
             else{
                 return;
