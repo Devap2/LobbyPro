@@ -25,7 +25,7 @@ public class OnPlayerInteract implements Listener {
         if (p.getInventory().getItemInMainHand().getType() == Material.CLOCK) {
             if (Objects.requireNonNull(p.getInventory().getItemInMainHand().getItemMeta()).getDisplayName().equalsIgnoreCase(ChatColor.DARK_RED + "" + ChatColor.BOLD + "Lobby Navigator")) {
 
-                // Checking if the player action is equals to right clicking air.
+                // Checking if the player action is equals to right-clicking air.
                 if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
 
                     EquipmentSlot slot = e.getHand();
@@ -45,7 +45,7 @@ public class OnPlayerInteract implements Listener {
         else if (p.getInventory().getItemInMainHand().getType() == Material.EMERALD) {
             if (Objects.requireNonNull(p.getInventory().getItemInMainHand().getItemMeta()).getDisplayName().equalsIgnoreCase(ChatColor.DARK_GREEN + "Updates")) {
 
-                // Checking if the player action is equals to right clicking air.
+                // Checking if the player action is equals to right-clicking air.
                 if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
 
                     EquipmentSlot slot = e.getHand();
@@ -63,7 +63,7 @@ public class OnPlayerInteract implements Listener {
         else if (p.getInventory().getItemInMainHand().getType() == Material.BOOK) {
             if (Objects.requireNonNull(p.getInventory().getItemInMainHand().getItemMeta()).getDisplayName().equalsIgnoreCase(ChatColor.DARK_GRAY + "Server Information")) {
 
-                // Checking if the player action is equals to right clicking air.
+                // Checking if the player action is equals to right-clicking air.
                 if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
 
                     EquipmentSlot slot = e.getHand();

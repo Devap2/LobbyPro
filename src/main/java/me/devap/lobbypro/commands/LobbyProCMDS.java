@@ -36,7 +36,21 @@ public class LobbyProCMDS implements CommandExecutor {
             if (command.getName().equalsIgnoreCase("lp")) {
                 // If the command is equal to 'lp' and the argument length is 0 do ...
                 if (args.length == 0) {
-                    p.sendMessage(ChatColor.GRAY + "You must provide an argument, for example: /lp <help>");
+
+                    // Sending the player the server information message.
+                    p.sendMessage("");
+                    p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------");
+                    p.sendMessage(org.bukkit.ChatColor.RED +  "Lobby-Pro Plugin Help:");
+                    p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------");
+                    p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp help " + org.bukkit.ChatColor.GRAY + "To show this page");
+                    p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp info " + org.bukkit.ChatColor.GRAY + "To show the plugin information");
+                    p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp updates " + org.bukkit.ChatColor.GRAY + "To show the plugin update information");
+                    p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp version " + org.bukkit.ChatColor.GRAY + "To show the plugin information");
+                    p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp reload " + org.bukkit.ChatColor.GRAY + "To reload the LobbyPro plugin");
+                    p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp setlobby " + org.bukkit.ChatColor.GRAY + "To set the lobby location");
+                    p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp gui " + org.bukkit.ChatColor.GRAY + "To open the game selector gui");
+                    p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------");
+
                 }
                 // Else, if the arguments 0 are 'setspawn' or 'setlobby' set the server lobby/spawn location.
                 else {
@@ -122,25 +136,25 @@ public class LobbyProCMDS implements CommandExecutor {
 
                         // Sending the player the server information message.
                         p.sendMessage("");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------------");
-                        p.sendMessage(org.bukkit.ChatColor.RED +  "DevCraft Plugin Information:");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------------");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
+                        p.sendMessage(org.bukkit.ChatColor.RED +  "Lobby-Pro Plugin Information:");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Author: " + org.bukkit.ChatColor.GRAY + "Devap");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Developer: " + org.bukkit.ChatColor.GRAY + "Devap");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Version: " + org.bukkit.ChatColor.GRAY + "v1.0.0");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Release: " + org.bukkit.ChatColor.GRAY + "11-24-2022");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Downloads: " + org.bukkit.ChatColor.GRAY + "See spigot page.");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Language: " + org.bukkit.ChatColor.GRAY + "English.");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------------");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
 
                     }
                     else if(args[0].equalsIgnoreCase("help")){
 
                         // Sending the player the server information message.
                         p.sendMessage("");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "---------------------");
-                        p.sendMessage(org.bukkit.ChatColor.RED +  "DevCraft Plugin Help:");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "---------------------");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------");
+                        p.sendMessage(org.bukkit.ChatColor.RED +  "Lobby-Pro Plugin Help:");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp help " + org.bukkit.ChatColor.GRAY + "To show this page");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp info " + org.bukkit.ChatColor.GRAY + "To show the plugin information");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp updates " + org.bukkit.ChatColor.GRAY + "To show the plugin update information");
@@ -148,31 +162,31 @@ public class LobbyProCMDS implements CommandExecutor {
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp reload " + org.bukkit.ChatColor.GRAY + "To reload the LobbyPro plugin");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp setlobby " + org.bukkit.ChatColor.GRAY + "To set the lobby location");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp gui " + org.bukkit.ChatColor.GRAY + "To open the game selector gui");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "---------------------");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------");
 
                     }
                     else if(args[0].equalsIgnoreCase("updates")){
 
                         // Sending the player the server update message.
                         p.sendMessage("");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------------");
-                        p.sendMessage(org.bukkit.ChatColor.RED +  "DevCraft Update Information:");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------------");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
+                        p.sendMessage(org.bukkit.ChatColor.RED +  "Lobby-Pro Update Information:");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Added: " + org.bukkit.ChatColor.GRAY + "New Lobby Plugin");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Added: " + org.bukkit.ChatColor.GRAY + "New Survival Plugin");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Added: " + org.bukkit.ChatColor.GRAY + "New Features In Hub");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------------");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
 
                     }
                     else if(args[0].equalsIgnoreCase("version")){
 
-                        // Sending the player the server information message.
+                        // Sending the player the plugin version message.
                         p.sendMessage("");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "------------------------");
-                        p.sendMessage(org.bukkit.ChatColor.RED +  "LobbyPro Plugin Version:");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "------------------------");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "-------------------------");
+                        p.sendMessage(org.bukkit.ChatColor.RED +  "Lobby-Pro Plugin Version:");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "-------------------------");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Current Plugin Version " + org.bukkit.ChatColor.GRAY + "v1.0.0");
-                        p.sendMessage(org.bukkit.ChatColor.GRAY + "------------------------");
+                        p.sendMessage(org.bukkit.ChatColor.GRAY + "-------------------------");
 
                     }
                     else {

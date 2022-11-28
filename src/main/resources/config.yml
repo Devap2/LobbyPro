@@ -13,7 +13,7 @@ lobby-location:
 enable-join-message: true
 
 # To change the message send to the player on server join.
-join-message: "Welcome to the server."
+join-message: "&aWelcome to the server."
 
 # To clean the inventory on server join.
 join-clear-inventory: true
@@ -62,4 +62,7 @@ fly-on-message: "&aEnabled Fly!"
 
 # To change the message when disabling flying.
 fly-off-message: "&cDisabled Fly!"
+
+# To enable a sound played when a player joins.
+enable-sound-on-join: true
 

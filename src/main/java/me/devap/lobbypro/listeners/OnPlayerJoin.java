@@ -59,7 +59,15 @@ public class OnPlayerJoin implements Listener {
 
             // Setting the player's custom join message if set in config.
             if(plugin.getConfig().getBoolean("enable-join-message")){
-                e.setJoinMessage(ChatColor.GRAY + joinMessage);
+                assert joinMessage != null;
+                e.setJoinMessage(ChatColor.translateAlternateColorCodes('&', joinMessage));
+            }
+            else{
+                return;
+            }
+
+            if(plugin.getConfig().getBoolean("enable-sound-on-join")){
+                p.playNote(p.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.E));
             }
             else{
                 return;
