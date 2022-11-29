@@ -14,7 +14,6 @@ public class OnBlockPlace implements Listener {
         this.plugin = plugin;
     }
 
-
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent e){
 

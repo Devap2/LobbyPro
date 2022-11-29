@@ -22,15 +22,19 @@ public class OnSwapHandItems implements Listener {
         /* Checking the player swap event */
 
         if(plugin.getConfig().getBoolean("disable-item-swap")){
-            // Checking if the item which is swapped in off hand is equal to emerald, book or clock. If true, cancel the event.
+            // Checking if the item which is swapped in offhand is equal to emerald, book or clock. If true, cancel the event.
             if(Objects.requireNonNull(e.getOffHandItem()).getType().equals(Material.EMERALD) ||
                     e.getOffHandItem().getType().equals(Material.BOOK) ||
+                    (e.getOffHandItem().getType().equals(Material.FEATHER)) ||
+                    (e.getOffHandItem().getType().equals(Material.FIRE_CHARGE)) ||
                     e.getOffHandItem().getType().equals(Material.CLOCK)) {
                 e.setCancelled(true);
             }
             // Checking if the item which is swapped in main hand is equal to emerald, book or clock. If true, cancel the event.
             if(Objects.requireNonNull(e.getMainHandItem()).getType().equals(Material.EMERALD) ||
                     e.getMainHandItem().getType().equals(Material.BOOK) ||
+                    (e.getOffHandItem().getType().equals(Material.FEATHER)) ||
+                    (e.getOffHandItem().getType().equals(Material.FIRE_CHARGE)) ||
                     e.getMainHandItem().getType().equals(Material.CLOCK)) {
                 e.setCancelled(true);
             }

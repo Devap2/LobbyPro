@@ -12,17 +12,27 @@ public class GameModeCMD implements CommandExecutor {
 
         Player p = (Player) sender;
 
+        /* Creating shortcuts for the /gamemode creative/survival/adventure/spectator commands. */
+
         if(command.getName().equalsIgnoreCase("gmc")){
-            p.setGameMode(GameMode.CREATIVE);
+            if(p.isOp()){
+                p.setGameMode(GameMode.CREATIVE);
+            }
         }
         if(command.getName().equalsIgnoreCase("gms")){
-            p.setGameMode(GameMode.SURVIVAL);
+            if(p.isOp()){
+                p.setGameMode(GameMode.SURVIVAL);
+            }
         }
         if(command.getName().equalsIgnoreCase("gma")){
-            p.setGameMode(GameMode.ADVENTURE);
+            if (p.isOp()) {
+                p.setGameMode(GameMode.ADVENTURE);
+            }
         }
         if(command.getName().equalsIgnoreCase("gmp")){
-            p.setGameMode(GameMode.SPECTATOR);
+            if (p.isOp()) {
+                p.setGameMode(GameMode.SPECTATOR);
+            }
         }
 
         return false;

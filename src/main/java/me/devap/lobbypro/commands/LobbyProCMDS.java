@@ -8,6 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -49,6 +50,7 @@ public class LobbyProCMDS implements CommandExecutor {
                     p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp reload " + org.bukkit.ChatColor.GRAY + "To reload the LobbyPro plugin");
                     p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp setlobby " + org.bukkit.ChatColor.GRAY + "To set the lobby location");
                     p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp gui " + org.bukkit.ChatColor.GRAY + "To open the game selector gui");
+                    p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp particles " + org.bukkit.ChatColor.GRAY + "To open the particle gui");
                     p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------");
 
                 }
@@ -132,12 +134,111 @@ public class LobbyProCMDS implements CommandExecutor {
 
 
                     }
-                    else if(args[0].equalsIgnoreCase("info")){
+                    else if (args[0].equalsIgnoreCase("particles")) {
+
+                        Inventory particleGUI = Bukkit.createInventory(p, 36, ChatColor.DARK_RED + "Particle Selector");
+
+                        // The item stacks for in the particles.
+                        ItemStack redstoneParticle = new ItemStack(Material.REDSTONE_TORCH);
+                        ItemStack heartParticle = new ItemStack(Material.RED_DYE);
+                        ItemStack waterParticle = new ItemStack(Material.WATER_BUCKET);
+                        ItemStack lavaParticle = new ItemStack(Material.LAVA_BUCKET);
+                        ItemStack potionParticle = new ItemStack(Material.POTION);
+                        ItemStack snowParticle = new ItemStack(Material.SNOWBALL);
+                        ItemStack musicParticle = new ItemStack(Material.NOTE_BLOCK);
+                        ItemStack closeGUI = new ItemStack(Material.REDSTONE);
+
+                        // Setting the redstone particle meta/lore.
+                        ItemMeta redstoneParticleMeta = redstoneParticle.getItemMeta();
+                        assert redstoneParticleMeta != null;
+                        redstoneParticleMeta.setDisplayName(ChatColor.DARK_RED + "" + ChatColor.BOLD + "Redstone");
+                        ArrayList<String> redstoneParticleLore = new ArrayList<>();
+                        redstoneParticleLore.add(ChatColor.GREEN + "Gives you a cool redstone particle effect.");
+                        redstoneParticleMeta.setLore(redstoneParticleLore);
+                        redstoneParticle.setItemMeta(redstoneParticleMeta);
+
+                        // Setting the heart particle meta/lore.
+                        ItemMeta heartParticleMeta = heartParticle.getItemMeta();
+                        assert heartParticleMeta != null;
+                        heartParticleMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&c&lHeart"));
+                        ArrayList<String> heartParticleLore = new ArrayList<>();
+                        heartParticleLore.add(ChatColor.GREEN + "Gives you a cool heart particle effect.");
+                        heartParticleMeta.setLore(heartParticleLore);
+                        heartParticle.setItemMeta(heartParticleMeta);
+
+                        // Setting the water particle meta/lore.
+                        ItemMeta waterParticleMeta = waterParticle.getItemMeta();
+                        assert waterParticleMeta != null;
+                        waterParticleMeta.setDisplayName(ChatColor.BLUE + "" + ChatColor.BOLD + "Water");
+                        ArrayList<String> waterParticleLore = new ArrayList<>();
+                        waterParticleLore.add(ChatColor.GREEN + "Gives you a cool water particle effect.");
+                        waterParticleMeta.setLore(waterParticleLore);
+                        waterParticle.setItemMeta(waterParticleMeta);
+
+                        // Setting the lava particle meta/lore.
+                        ItemMeta lavaParticleMeta = lavaParticle.getItemMeta();
+                        assert lavaParticleMeta != null;
+                        lavaParticleMeta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "Lava");
+                        ArrayList<String> lavaParticleLore = new ArrayList<>();
+                        lavaParticleLore.add(ChatColor.GREEN + "Gives you a cool lava particle effect.");
+                        lavaParticleMeta.setLore(lavaParticleLore);
+                        lavaParticle.setItemMeta(lavaParticleMeta);
+
+                        // Setting the potion particle meta/lore.
+                        ItemMeta potionParticleMeta = potionParticle.getItemMeta();
+                        assert potionParticleMeta != null;
+                        potionParticleMeta.setDisplayName(ChatColor.GRAY + "" + ChatColor.BOLD + "Potion");
+                        ArrayList<String> potionParticleLore = new ArrayList<>();
+                        potionParticleLore.add(ChatColor.GREEN + "Gives you a cool potion particle effect.");
+                        potionParticleMeta.setLore(potionParticleLore);
+                        potionParticle.setItemMeta(potionParticleMeta);
+
+                        // Setting the snow particle meta/lore.
+                        ItemMeta snowParticleMeta = snowParticle.getItemMeta();
+                        assert snowParticleMeta != null;
+                        snowParticleMeta.setDisplayName(ChatColor.WHITE + "" + ChatColor.BOLD + "Snow");
+                        ArrayList<String> snowParticleLore = new ArrayList<>();
+                        snowParticleLore.add(ChatColor.GREEN + "Gives you a cool snow particle effect.");
+                        snowParticleMeta.setLore(snowParticleLore);
+                        snowParticle.setItemMeta(snowParticleMeta);
+
+                        // Setting the music particle meta/lore.
+                        ItemMeta musicParticleMeta = musicParticle.getItemMeta();
+                        assert musicParticleMeta != null;
+                        musicParticleMeta.setDisplayName(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Music");
+                        ArrayList<String> musicParticleLore = new ArrayList<>();
+                        musicParticleLore.add(ChatColor.GREEN + "Gives you a cool music particle effect.");
+                        musicParticleMeta.setLore(musicParticleLore);
+                        musicParticle.setItemMeta(musicParticleMeta);
+
+                        // Setting the close menu meta/lore.
+                        ItemMeta closeGUIMeta = closeGUI.getItemMeta();
+                        assert closeGUIMeta != null;
+                        closeGUIMeta.setDisplayName(ChatColor.DARK_GRAY + "Close Menu");
+                        ArrayList<String> closeGUILore = new ArrayList<>();
+                        closeGUILore.add(ChatColor.GRAY + "Left click to leave the menu.");
+                        closeGUIMeta.setLore(closeGUILore);
+                        closeGUI.setItemMeta(closeGUIMeta);
+
+                        // Setting the items in the gui.
+                        particleGUI.setItem(10, redstoneParticle);
+                        particleGUI.setItem(11, heartParticle);
+                        particleGUI.setItem(12, waterParticle);
+                        particleGUI.setItem(13, lavaParticle);
+                        particleGUI.setItem(14, potionParticle);
+                        particleGUI.setItem(15, snowParticle);
+                        particleGUI.setItem(16, musicParticle);
+                        particleGUI.setItem(31, closeGUI);
+
+                        p.openInventory(particleGUI);
+
+                    }
+                    else if (args[0].equalsIgnoreCase("info")) {
 
                         // Sending the player the server information message.
                         p.sendMessage("");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
-                        p.sendMessage(org.bukkit.ChatColor.RED +  "Lobby-Pro Plugin Information:");
+                        p.sendMessage(org.bukkit.ChatColor.RED + "Lobby-Pro Plugin Information:");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Author: " + org.bukkit.ChatColor.GRAY + "Devap");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Developer: " + org.bukkit.ChatColor.GRAY + "Devap");
@@ -147,13 +248,12 @@ public class LobbyProCMDS implements CommandExecutor {
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Language: " + org.bukkit.ChatColor.GRAY + "English.");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
 
-                    }
-                    else if(args[0].equalsIgnoreCase("help")){
+                    } else if (args[0].equalsIgnoreCase("help")) {
 
                         // Sending the player the server information message.
                         p.sendMessage("");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------");
-                        p.sendMessage(org.bukkit.ChatColor.RED +  "Lobby-Pro Plugin Help:");
+                        p.sendMessage(org.bukkit.ChatColor.RED + "Lobby-Pro Plugin Help:");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp help " + org.bukkit.ChatColor.GRAY + "To show this page");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp info " + org.bukkit.ChatColor.GRAY + "To show the plugin information");
@@ -164,32 +264,29 @@ public class LobbyProCMDS implements CommandExecutor {
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "/lp gui " + org.bukkit.ChatColor.GRAY + "To open the game selector gui");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "----------------------");
 
-                    }
-                    else if(args[0].equalsIgnoreCase("updates")){
+                    } else if (args[0].equalsIgnoreCase("updates")) {
 
                         // Sending the player the server update message.
                         p.sendMessage("");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
-                        p.sendMessage(org.bukkit.ChatColor.RED +  "Lobby-Pro Update Information:");
+                        p.sendMessage(org.bukkit.ChatColor.RED + "Lobby-Pro Update Information:");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Added: " + org.bukkit.ChatColor.GRAY + "New Lobby Plugin");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Added: " + org.bukkit.ChatColor.GRAY + "New Survival Plugin");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Added: " + org.bukkit.ChatColor.GRAY + "New Features In Hub");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "-----------------------------");
 
-                    }
-                    else if(args[0].equalsIgnoreCase("version")){
+                    } else if (args[0].equalsIgnoreCase("version")) {
 
                         // Sending the player the plugin version message.
                         p.sendMessage("");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "-------------------------");
-                        p.sendMessage(org.bukkit.ChatColor.RED +  "Lobby-Pro Plugin Version:");
+                        p.sendMessage(org.bukkit.ChatColor.RED + "Lobby-Pro Plugin Version:");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "-------------------------");
                         p.sendMessage(org.bukkit.ChatColor.GOLD + "Current Plugin Version " + org.bukkit.ChatColor.GRAY + "v1.0.0");
                         p.sendMessage(org.bukkit.ChatColor.GRAY + "-------------------------");
 
-                    }
-                    else {
+                    } else {
                         if (args[0].equalsIgnoreCase("reload") || args[0].equalsIgnoreCase("rl")) {
 
                             p.sendMessage(ChatColor.GRAY + "Reloading the plugin configuration file.");

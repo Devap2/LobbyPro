@@ -23,7 +23,7 @@ public final class LobbyPro extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new OnBlockPlace(this), this);
         getServer().getPluginManager().registerEvents(new OnFoodLevelChange(this), this);
         getServer().getPluginManager().registerEvents(new OnPlayerInteract(), this);
-        getServer().getPluginManager().registerEvents(new OnInventoryClick(), this);
+        getServer().getPluginManager().registerEvents(new OnInventoryClick(this), this);
         getServer().getPluginManager().registerEvents(new OnSwapHandItems(this), this);
         getServer().getPluginManager().registerEvents(new OnItemDrop(), this);
         getServer().getPluginManager().registerEvents(new OnWeatherChange(this), this);
@@ -69,7 +69,7 @@ public final class LobbyPro extends JavaPlugin {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
 
         // Creating the list of strings
-        List<String> list = Arrays.asList("help", "setspawn", "setlobby", "updates", "gui", "reload", "info", "version");
+        List<String> list = Arrays.asList("help", "setspawn", "setlobby", "updates", "gui", "reload", "info", "version", "particles");
         String input = args[0].toLowerCase();
 
         List<String> completions = null;

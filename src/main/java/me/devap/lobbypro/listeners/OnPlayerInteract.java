@@ -43,7 +43,7 @@ public class OnPlayerInteract implements Listener {
         }
         // Doing the same check's for the player interact event as above.
         else if (p.getInventory().getItemInMainHand().getType() == Material.EMERALD) {
-            if (Objects.requireNonNull(p.getInventory().getItemInMainHand().getItemMeta()).getDisplayName().equalsIgnoreCase(ChatColor.DARK_GREEN + "Updates")) {
+            if (Objects.requireNonNull(p.getInventory().getItemInMainHand().getItemMeta()).getDisplayName().equalsIgnoreCase(ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "Updates")) {
 
                 // Checking if the player action is equals to right-clicking air.
                 if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
@@ -60,8 +60,44 @@ public class OnPlayerInteract implements Listener {
                 }
             }
         }
+        else if (p.getInventory().getItemInMainHand().getType() == Material.FEATHER) {
+            if (Objects.requireNonNull(p.getInventory().getItemInMainHand().getItemMeta()).getDisplayName().equalsIgnoreCase(ChatColor.WHITE + "" + ChatColor.BOLD + "Leap Jump")) {
+
+                // Checking if the player action is equals to right-clicking air.
+                if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
+
+                    EquipmentSlot slot = e.getHand();
+
+                    // Get the slot, so that it doesn't call twice.
+                    assert slot != null;
+                    if (slot.equals(EquipmentSlot.HAND)) {
+
+                        p.setVelocity(p.getLocation().getDirection().multiply(2.5));
+
+                    }
+                }
+            }
+        }
+        else if (p.getInventory().getItemInMainHand().getType() == Material.FIRE_CHARGE) {
+            if (Objects.requireNonNull(p.getInventory().getItemInMainHand().getItemMeta()).getDisplayName().equalsIgnoreCase(ChatColor.GOLD + "" + ChatColor.BOLD + "Particle Selector")) {
+
+                // Checking if the player action is equals to right-clicking air.
+                if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
+
+                    EquipmentSlot slot = e.getHand();
+
+                    // Get the slot, so that it doesn't call twice.
+                    assert slot != null;
+                    if (slot.equals(EquipmentSlot.HAND)) {
+
+                        p.performCommand("lp particles");
+
+                    }
+                }
+            }
+        }
         else if (p.getInventory().getItemInMainHand().getType() == Material.BOOK) {
-            if (Objects.requireNonNull(p.getInventory().getItemInMainHand().getItemMeta()).getDisplayName().equalsIgnoreCase(ChatColor.DARK_GRAY + "Server Information")) {
+            if (Objects.requireNonNull(p.getInventory().getItemInMainHand().getItemMeta()).getDisplayName().equalsIgnoreCase(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "Server Information")) {
 
                 // Checking if the player action is equals to right-clicking air.
                 if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {

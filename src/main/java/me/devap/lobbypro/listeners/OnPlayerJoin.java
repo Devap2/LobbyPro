@@ -10,6 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class OnPlayerJoin implements Listener {
 
@@ -66,10 +67,11 @@ public class OnPlayerJoin implements Listener {
                 return;
             }
 
+            // Enabling a sound played when a player joins.
             if(plugin.getConfig().getBoolean("enable-sound-on-join")){
                 p.playNote(p.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.E));
             }
-            else{
+            else {
                 return;
             }
 
@@ -89,30 +91,48 @@ public class OnPlayerJoin implements Listener {
             ItemStack emerald = new ItemStack(Material.EMERALD);
             ItemMeta emeraldMeta = emerald.getItemMeta();
             assert emeraldMeta != null;
-            emeraldMeta.setDisplayName(ChatColor.DARK_GREEN + "Updates");
-            emeraldMeta.setLore(Arrays.asList(ChatColor.GRAY + "Right click to see the server and plugin updates", ChatColor.GRAY + "New, lobby and survival plugin!"));
+            emeraldMeta.setDisplayName(ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "Updates");
+            emeraldMeta.setLore(Arrays.asList(ChatColor.GRAY + "Right click to see the server and plugin updates", ChatColor.GRAY + "New: lobby and survival plugin!"));
             emerald.setItemMeta(emeraldMeta);
+
+            // Particle Selector ItemStack + ItemMeta
+            ItemStack feather = new ItemStack(Material.FEATHER);
+            ItemMeta featherMeta = feather.getItemMeta();
+            assert featherMeta != null;
+            featherMeta.setDisplayName(ChatColor.WHITE + "" + ChatColor.BOLD + "Leap Jump");
+            featherMeta.setLore(Collections.singletonList(ChatColor.GRAY + "Right click to launch yourself into the air!"));
+            feather.setItemMeta(featherMeta);
 
             // Lobby Navigator ItemStack + ItemMeta
             ItemStack lobbyNavigator = new ItemStack(Material.CLOCK);
             ItemMeta navigatorMeta = lobbyNavigator.getItemMeta();
             assert navigatorMeta != null;
             navigatorMeta.setDisplayName(ChatColor.DARK_RED + "" + ChatColor.BOLD + "Lobby Navigator");
-            navigatorMeta.setLore(Arrays.asList(ChatColor.GRAY + "Right click to select the gamemode", ChatColor.GRAY + "Enjoy it haha!"));
+            navigatorMeta.setLore(Arrays.asList(ChatColor.GRAY + "Right click to open the gamemode navigator menu", ChatColor.GRAY + "Try to win!"));
             lobbyNavigator.setItemMeta(navigatorMeta);
+
+            // Particle Selector ItemStack + ItemMeta
+            ItemStack particleSelector = new ItemStack(Material.FIRE_CHARGE);
+            ItemMeta particleSelectorMeta = particleSelector.getItemMeta();
+            assert particleSelectorMeta != null;
+            particleSelectorMeta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "Particle Selector");
+            particleSelectorMeta.setLore(Arrays.asList(ChatColor.GRAY + "Right click to open the particle selector menu", ChatColor.GRAY + "New: redstone, cloud and coal!"));
+            particleSelector.setItemMeta(particleSelectorMeta);
 
             // Server Information Book ItemStack + ItemMeta
             ItemStack infoBook = new ItemStack(Material.BOOK);
             ItemMeta infoBookMeta = infoBook.getItemMeta();
             assert infoBookMeta != null;
-            infoBookMeta.setDisplayName(ChatColor.DARK_GRAY + "Server Information");
+            infoBookMeta.setDisplayName(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "Server Information");
             infoBookMeta.setLore(Arrays.asList(ChatColor.GRAY + "Right click to see the server information", ChatColor.GRAY + "Go to our webshop to see our ranks!"));
             infoBook.setItemMeta(infoBookMeta);
 
             // Giving the player the items
             p.getInventory().setItem(0, emerald);
+            p.getInventory().setItem(1, feather);
             p.getInventory().setItem(4, lobbyNavigator);
             p.getInventory().setItem(8, infoBook);
+            p.getInventory().setItem(7, particleSelector);
 
         }
     }

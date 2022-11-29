@@ -66,3 +66,9 @@ fly-off-message: "&cDisabled Fly!"
 # To enable a sound played when a player joins.
 enable-sound-on-join: true
 
+# To change the message when enabling a particle trail.
+particle-trail-on-message: "&aEnabled Particle Trail!"
+
+# To change the message when disabling a particle trail.
+particle-trail-off-message: "&cDisabled Particle Trail!"
+

@@ -3,7 +3,6 @@ package me.devap.lobbypro.listeners;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockExplodeEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
 public class OnItemDrop implements Listener {
@@ -16,6 +15,8 @@ public class OnItemDrop implements Listener {
         //Checking if the dropped item is equal to an emerald, clock, or book.
         if(e.getItemDrop().getItemStack().getType().equals(Material.EMERALD) ||
                 (e.getItemDrop().getItemStack().getType().equals(Material.CLOCK) ||
+                        (e.getItemDrop().getItemStack().getType().equals(Material.FEATHER)) ||
+                        (e.getItemDrop().getItemStack().getType().equals(Material.FIRE_CHARGE)) ||
                         (e.getItemDrop().getItemStack().getType().equals(Material.BOOK)))
         ){
             e.setCancelled(true);

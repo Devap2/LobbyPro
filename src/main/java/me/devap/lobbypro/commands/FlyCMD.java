@@ -25,6 +25,8 @@ public class FlyCMD implements CommandExecutor {
 
         Player p = (Player) sender;
 
+        /* Creating the /fly command, with configurable on and off messages. */
+
         if(command.getName().equalsIgnoreCase("fly")){
             if(plugin.getConfig().getBoolean("enable-fly-command")){
                 if(sender.isOp()) {
@@ -32,13 +34,14 @@ public class FlyCMD implements CommandExecutor {
                         String onMessage = plugin.getConfig().getString("fly-on-message");
                         String offMessage = plugin.getConfig().getString("fly-off-message");
 
+                        // If the player is in the list of flying people, do ...
                         if (flying_people_list.contains(p)) {
                             flying_people_list.remove(p);
                             assert offMessage != null;
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&', offMessage));
                             p.setAllowFlight(false);
                         }
-                        else if (!flying_people_list.contains(p)) {
+                        else {
                             flying_people_list.add(p);
                             assert onMessage != null;
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&', onMessage));
